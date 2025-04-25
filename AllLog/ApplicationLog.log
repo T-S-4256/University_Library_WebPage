@@ -1,0 +1,149 @@
+2025-04-24 14:18:45 — INFO — root — studentDash — Line: 414 — Book Data  : {'name': 'LET US C', 'id': 'C001', 'writter': 'AMAN ARYA', 'subject': 'COMPUTER SCIENCE', 'issue_date': '24-04-25', 'return_date': '01-05-25'}
+2025-04-24 14:18:45 — ERROR — app — log_exception — Line: 875 — Exception on /studentDash [GET]
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python39\lib\site-packages\flask\app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python39\lib\site-packages\flask\app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python39\lib\site-packages\flask\app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python39\lib\site-packages\flask\app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "d:\PROJECT.H\LIBRARY_WEB_PAGE\app.py", line 45, in decorated_function
+    return f(*args, **kwargs)
+  File "d:\PROJECT.H\LIBRARY_WEB_PAGE\app.py", line 416, in studentDash
+    "name": data["name"],
+TypeError: 'NoneType' object is not subscriptable
+2025-04-24 14:18:45 — INFO — werkzeug — _log — Line: 97 — 100.66.73.250 - - [24/Apr/2025 14:18:45] "[35m[1mGET /studentDash HTTP/1.1[0m" 500 -
+2025-04-24 14:20:59 — INFO — werkzeug — _log — Line: 97 — [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.66.43:5000
+2025-04-24 14:20:59 — INFO — werkzeug — _log — Line: 97 — [33mPress CTRL+C to quit[0m
+2025-04-24 14:21:35 — INFO — werkzeug — _log — Line: 97 — 192.168.66.43 - - [24/Apr/2025 14:21:35] "GET / HTTP/1.1" 200 -
+2025-04-24 14:21:37 — INFO — werkzeug — _log — Line: 97 — 192.168.66.43 - - [24/Apr/2025 14:21:37] "GET /static/libraryPic.avif HTTP/1.1" 200 -
+2025-04-24 14:21:38 — INFO — werkzeug — _log — Line: 97 — 192.168.66.43 - - [24/Apr/2025 14:21:38] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-04-24 14:22:04 — ERROR — werkzeug — _log — Line: 97 — 192.168.66.85 - - [24/Apr/2025 14:22:04] code 400, message Bad request version ('®«\x9c5å¢àLÒ7')
+2025-04-24 14:22:04 — INFO — werkzeug — _log — Line: 97 — 192.168.66.85 - - [24/Apr/2025 14:22:04] "[35m[1m\x16\x03\x01\x02\x1a\x01\x00\x02\x16\x03\x03Ôí\x1b[\x86ÿ´5\x14n\x94\x18+=0\x8bcÌu+\x98½Ø\x8a!Fz\x08Ð,=× å½ý¡m}ä\x1búòbqoÝh!5å\x024/}f\x14,ñÛÕtd\x03>\x00 úú\x13\x01\x13\x02\x13\x03À+À/À,À0Ì©Ì¨À\x13À\x14\x00\x9c\x00\x9d\x00/\x005\x01\x00\x01­úú\x00\x00\x00-\x00\x02\x01\x01þ\x0d\x00ú\x00\x00\x01\x00\x01ß\x00 d´Ü²\x8b\x0c\x0dÃw©m¬C¿ \x82F\x87\x92¼À\x05q\x85\x9a\x8d¼þeeæ]\x00Ð°TIn .\x00 \x88Ù\x96?\x10å­ÇÓ\x86Â<Ï'ýÐ7\x85%u"\x7fÖy\x94cï"½\x11Õ¥\x0cìÅæ\x83\x08%j<ð\x13Zòf²\x16IS\x0fsô8Q\x837[j\x85j ÄJÔÁ6\x14\x8fÑ=\x9e´O\x83\x116®¿k\x13"åI\x1fWÔ.\x88(\x887ÎînÉÊe\x87Õ\x19Ü\x92¡ûúÛO\x81\x81\x83ïF*¸Î\x82wÇ[\x7fè+\x8aÌ³\x9c,ô¬\x9e]ÿa!\x80ä\x04°cö`\x1aÙ\x8bÁ}d0µö\x1aé&CºÊ\x08]lþaï\x1e\x14ÿ\x14\x05\x96!'Ñ\x93\x1d®«\x9c5å¢àLÒ7[0m" HTTPStatus.BAD_REQUEST -
+2025-04-24 14:22:04 — ERROR — werkzeug — _log — Line: 97 — 192.168.66.85 - - [24/Apr/2025 14:22:04] code 400, message Bad request version ('a\x10ÅCx´{Øµp6¥¶È4ë\x98Ì\x90\x8f~¶(¾§ëÕD®Djî\x0fÊÄ')
+2025-04-24 14:22:04 — INFO — werkzeug — _log — Line: 97 — 192.168.66.85 - - [24/Apr/2025 14:22:04] "[35m[1m\x16\x03\x01\x02:\x01\x00\x026\x03\x03îçðï=[òó¡\x98\x8d\x1fþÍ^\x0fÁP\x8cz\x03ºÙ\x09r\x87\x1dÉ\x19\x05äó F&\x9c-Ay§I\x87&â¾µ\x0f\x82Þ=\x1dé\x16\x87áyj\x12\x1b·ÙN|ã©\x00 JJ\x13\x01\x13\x02\x13\x03À+À/À,À0Ì©Ì¨À\x13À\x14\x00\x9c\x00\x9d\x00/\x005\x01\x00\x01Í\x9a\x9a\x00\x00\x00+\x00\x07\x06úú\x03\x04\x03\x03\x00\x0b\x00\x02\x01\x00\x00\x10\x00\x0e\x00\x0c\x02h2\x08http/1.1þ\x0d\x01\x1a\x00\x00\x01\x00\x015\x00 K\x17·à\x84ð\x86í\x88x\x8eEB»Ú\x88!î!\x1f6jh s@Í?Úz¨*\x00ðº\x0dûÿ_ß¾©:C\x9dãÑ\x1ca\x10ÅCx´{Øµp6¥¶È4ë\x98Ì\x90\x8f~¶(¾§ëÕD®Djî\x0fÊÄ [0m" HTTPStatus.BAD_REQUEST -
+2025-04-24 14:22:04 — ERROR — werkzeug — _log — Line: 97 — 192.168.66.85 - - [24/Apr/2025 14:22:04] code 400, message Bad request version ('L±;c¸êtÀGÿ¬òã+Ä\x1a')
+2025-04-24 14:22:04 — INFO — werkzeug — _log — Line: 97 — 192.168.66.85 - - [24/Apr/2025 14:22:04] "[35m[1m\x16\x03\x01\x02\x00\x01\x00\x01ü\x03\x03g\x1d\x97\x08?M~Þ\x03/D\x1a\x05{¢ðÜ\x82Ë\x0c\x082íy\x8e\x02QP\x93¡µÓ \x1a!xê¤F0y\x86\x80S0êqÆ>²\x80\x98iô¯;pÝé5ïV6Ö:\x00 êê\x13\x01\x13\x02\x13\x03À+À/À,À0Ì©Ì¨À\x13À\x14\x00\x9c\x00\x9d\x00/\x005\x01\x00\x01\x93zz\x00\x00þ\x0d\x00º\x00\x00\x01\x00\x01\x0b\x00 fë\x05ü%\x7fÚ&\x1dL±;c¸êtÀGÿ¬òã+Ä\x1a[0m" HTTPStatus.BAD_REQUEST -
+2025-04-24 14:22:04 — ERROR — werkzeug — _log — Line: 97 — 192.168.66.85 - - [24/Apr/2025 14:22:04] code 400, message Bad request version ('q\x19\x03\x8fÀ\x95ú\x9dX\x00\x90y\x84=þ¯8ºó7Kò¿\x19\xad')
+2025-04-24 14:22:04 — ERROR — werkzeug — _log — Line: 97 — 192.168.66.85 - - [24/Apr/2025 14:22:04] code 400, message Bad request version ('ÙÌe-ÖS+ãëq:;ô¥Qª\x86cîÐ\x00')
+2025-04-24 14:22:04 — INFO — werkzeug — _log — Line: 97 — 192.168.66.85 - - [24/Apr/2025 14:22:04] "[35m[1m\x16\x03\x01\x02\x00\x01\x00\x01ü\x03\x03}ÁÒ\x00Ð¼æ×M®\x13ü:#ë$ëÍ?\x96`\x96iÄõlHí\x91xj¨ \x90\x93È\x07Cz/×!\x0dð\x03ßÓQ\x8dAÍaB&µ/r6\x0c©éJùb\x84\x00 ÊÊ\x13\x01\x13\x02\x13\x03À+À/À,À0Ì©Ì¨À\x13À\x14\x00\x9c\x00\x9d\x00/\x005\x01\x00\x01\x93\x1a\x1a\x00\x00\x00+\x00\x07\x06\x1a\x1a\x03\x04\x03\x03\x00#\x00\x00\x00-\x00\x02\x01\x01\x00\x05\x00\x05\x01\x00\x00\x00\x00\x003\x00+\x00)úú\x00\x01\x00\x00\x1d\x00 ¾\x83\x9dúbL:º´g\x0f\x09´óWÂY÷rÃÓ\x05±\x0eáb ,\x8e[\\$\x00\x0d\x00\x12\x00\x10\x04\x03\x08\x04\x04\x01\x05\x03\x08\x05\x05\x01\x08\x06\x06\x01\x00\x0b\x00\x02\x01\x00\x00\x17\x00\x00ÿ\x01\x00\x01\x00þ\x0d\x00º\x00\x00\x01\x00\x01%\x00 <ÀHûè\x9e\x1bßÙ\x11\x91H/\x05Ly\x92Ac\x81\x1fÈ\x1dq\x19\x03\x8fÀ\x95ú\x9dX\x00\x90y\x84=þ¯8ºó7Kò¿\x19­[0m" HTTPStatus.BAD_REQUEST -
+2025-04-24 14:22:04 — INFO — werkzeug — _log — Line: 97 — 192.168.66.85 - - [24/Apr/2025 14:22:04] "[35m[1m\x16\x03\x01\x02\x00\x01\x00\x01ü\x03\x03:ºé\x82LM(["1§ñp\x9f÷¢Vg\x01\x94«Ç%\x12æãØÝ$¶®Â ××¶êèhÄ\x09ß\x8b\x0d\x0dÙÌe-ÖS+ãëq:;ô¥Qª\x86cîÐ\x00 [0m" HTTPStatus.BAD_REQUEST -
+2025-04-24 14:22:04 — ERROR — werkzeug — _log — Line: 97 — 192.168.66.85 - - [24/Apr/2025 14:22:04] code 400, message Bad request version ('\x02h2\x08http/1.1\x00\x12\x00\x00\x00-\x00\x02\x01\x01\x00')
+2025-04-24 14:22:04 — INFO — werkzeug — _log — Line: 97 — 192.168.66.85 - - [24/Apr/2025 14:22:04] "[35m[1m\x16\x03\x01\x02\x1a\x01\x00\x02\x16\x03\x03}ùÀÈÝÄ\x0c¼\x0ep\x1c\x0f\x15mp=c$&Âëîz¤xñ (\x15\x12\x03? aB\x82á7GFAq©´\x91<\x16µ¡²\x0dD­ðè\x9e\x84Bs\x02\x1c\x19\x18[0\x00 ::\x13\x01\x13\x02\x13\x03À+À/À,À0Ì©Ì¨À\x13À\x14\x00\x9c\x00\x9d\x00/\x005\x01\x00\x01­úú\x00\x00þ\x0d\x00ú\x00\x00\x01\x00\x01?\x00 <íI)\x1aêÌûOç\x86Þ¼î\x8ekZG\x98º4ûç,86:\x92¢¦\\9\x00Ð\x14zàªødô¼HJµµ¬.¾cHÓ,+Ñ\x1eu¾VhI\x02¹è¬\x8d\x10FQ2îXÎKY¼®Ú\x97h`od\x06ÖÉ\x8fÔÌÞ\x1b¨~÷Z\x90÷\x02=`M\x1aùq\x91\x98\x06÷ÿ»Q\x1a\x0b6\x12°f¶ý\x9f*6\x94Ñ\x93\x14Ì?®þÚ'µý\x1c{\x03\x09¬Â\x8713\x92\x97n\x03(û\x92h\x0b@ê\x12$\x82­Ù"\x9eszàÞï\x08\x0c¶¾5Ò¿¹u5e<´\x9f\x95KJÃXü\x84å´åÌ\x93]Z´º\x0fgz(\x01\x16ZLÖ\x9d7\x89\x1bð wè\x13ë»\x0d\x15¥\x94Ù~\x1d&\x81ð`\x0fç+\x06J\x85\x0c\x02\x11¬\x83ÑpÃA\x00\x0b\x00\x02\x01\x00\x00\x05\x00\x05\x01\x00\x00\x00\x00\x00\x1b\x00\x03\x02\x00\x02\x00\x10\x00\x0e\x00\x0c\x02h2\x08http/1.1\x00\x12\x00\x00\x00-\x00\x02\x01\x01\x00[0m" HTTPStatus.BAD_REQUEST -
+2025-04-24 14:22:06 — ERROR — werkzeug — _log — Line: 97 — 192.168.66.85 - - [24/Apr/2025 14:22:06] code 400, message Bad request version ('\x95û-Í"')
+2025-04-24 14:22:06 — INFO — werkzeug — _log — Line: 97 — 192.168.66.85 - - [24/Apr/2025 14:22:06] "[35m[1m\x16\x03\x01\x02\x00\x01\x00\x01ü\x03\x03è\x066,¢À5?3*deH\x92¼\x8c\x86\x1cNÑÑ\x13ó6¤\x96Kó\x16ÑV\x19 \x0d\x06íëþ:?øy_&½±¦:ÙÁllºö³õ,\x85\x1bmþ\x15\x19®´\x00 ::\x13\x01\x13\x02\x13\x03À+À/À,À0Ì©Ì¨À\x13À\x14\x00\x9c\x00\x9d\x00/\x005\x01\x00\x01\x93zz\x00\x00\x00\x05\x00\x05\x01\x00\x00\x00\x00\x00\x10\x00\x0e\x00\x0c\x02h2\x08http/1.1\x00\x17\x00\x00\x00#\x00\x00þ\x0d\x00Ú\x00\x00\x01\x00\x01Ð\x00 µÇø\x9b\x04\x9e8\x9eÅf\x84Ä\x0cî\x8f\x01\x94\x1e\x1bËX\x95a\x9b\x0ekL\x1b¬·L8\x00°ukÑ'\x99x/Qf\x92\x86\x1cGCÁ@"\x1e\x19½½í(\\\x9d\x84¬¼ú\x19\x09\x98¦j¿ybÓÀ\x1cY\x1b8¿Y\x87¿sÓë\x8bª\x1cåÒ \x95û-Í"[0m" HTTPStatus.BAD_REQUEST -
+2025-04-24 14:22:06 — ERROR — werkzeug — _log — Line: 97 — 192.168.66.85 - - [24/Apr/2025 14:22:06] code 400, message Bad request version ('\x00\x02\x01\x00\x00')
+2025-04-24 14:22:06 — INFO — werkzeug — _log — Line: 97 — 192.168.66.85 - - [24/Apr/2025 14:22:06] "[35m[1m\x16\x03\x01\x02\x00\x01\x00\x01ü\x03\x03esw>W¸Î²mÍ~Öá\x10\x0b#\x82»\x07\x9f\x0c]m=Ñ?3\x06µ/¢= \x87c\x19à\x98± ª\x96±®)³è¬\x99æäó\x89@j\x7f\x93<rIO\x89\x10¾O\x00 ÊÊ\x13\x01\x13\x02\x13\x03À+À/À,À0Ì©Ì¨À\x13À\x14\x00\x9c\x00\x9d\x00/\x005\x01\x00\x01\x93ZZ\x00\x00ÿ\x01\x00\x01\x00\x00\x05\x00\x05\x01\x00\x00\x00\x00\x00\x12\x00\x00\x00\x0b\x00\x02\x01\x00\x00[0m" HTTPStatus.BAD_REQUEST -
+2025-04-24 14:22:06 — ERROR — werkzeug — _log — Line: 97 — 192.168.66.85 - - [24/Apr/2025 14:22:06] code 400, message Bad request version ('\x95ï·án\x9a+T)\x9d')
+2025-04-24 14:22:06 — INFO — werkzeug — _log — Line: 97 — 192.168.66.85 - - [24/Apr/2025 14:22:06] "[35m[1m\x16\x03\x01\x02:\x01\x00\x026\x03\x03¯Ø\x11±,\x82<Û\\p\x18»\x0e\x09>¢\x07\x99\x8e\x80ú\x99¾ yM\x97\x94\x7fÛ»/ ¥3p1fi< S­ûÕ®¸)\x0c©×\x01½þ\x03\x83É|Ï¤\x9b\x117g\x9f\x00 êê\x13\x01\x13\x02\x13\x03À+À/À,À0Ì©Ì¨À\x13À\x14\x00\x9c\x00\x9d\x00/\x005\x01\x00\x01Íºº\x00\x00\x00\x0d\x00\x12\x00\x10\x04\x03\x08\x04\x04\x01\x05\x03\x08\x05\x05\x01\x08\x06\x06\x01ÿ\x01\x00\x01\x00\x00\x10\x00\x0e\x00\x0c\x02h2\x08http/1.1þ\x0d\x01\x1a\x00\x00\x01\x00\x01\x86\x00 ã\x8aGé\x09\x12»ZpÎ\x01Wß5\x13pXõñ* \x89­\x81\x09ÍOì]\x16\x08^\x00ð\x90áÔk©Îg¯}éY­Lmhâ µ\x13ë\x19\x82¬È\x1fnþQ"±åÊÎfÙ\x1cá¹\x89]«ieÚÉËYª+1"Å]u\x0eo<q2»gÅÏë\x93¨b½Ï2?ÉJÓ#%Û\x1c²h}GVº·å^ª\x97"îÅ\x1dâ4)Òé0Ì\x8d\x7f\x0fÞ`mÏ\x1b £\x09°1.\x936åØø,Üí\x90Ï<ôÛ\x14\x87úÕ_YB\x09\x95ï·án\x9a+T)\x9d[0m" HTTPStatus.BAD_REQUEST -
+2025-04-24 14:22:06 — ERROR — werkzeug — _log — Line: 97 — 192.168.66.85 - - [24/Apr/2025 14:22:06] code 400, message Bad request version ('\x8a\x8a\x13\x01\x13\x02\x13\x03À+À/À,À0Ì©Ì¨À\x13À\x14\x00\x9c\x00\x9d\x00/\x005\x01\x00\x01\x93ÚÚ\x00\x00\x00')
+2025-04-24 14:22:06 — INFO — werkzeug — _log — Line: 97 — 192.168.66.85 - - [24/Apr/2025 14:22:06] "[35m[1m\x16\x03\x01\x02\x00\x01\x00\x01ü\x03\x03÷v¯*\x1bi\x8b«\x02\x04ò^7Þm1O\x04©>5ÀuÎ\x17ýU92QÒ¾ Ì×*\x84^\x88½|ÃZb¸<é@B\x07Ã­"\x8dF8Z_Ñht£\x8c¿F\x00 \x8a\x8a\x13\x01\x13\x02\x13\x03À+À/À,À0Ì©Ì¨À\x13À\x14\x00\x9c\x00\x9d\x00/\x005\x01\x00\x01\x93ÚÚ\x00\x00\x00[0m" HTTPStatus.BAD_REQUEST -
+2025-04-24 14:22:07 — ERROR — werkzeug — _log — Line: 97 — 192.168.66.85 - - [24/Apr/2025 14:22:07] code 400, message Bad request version ('ð\x8cU`|5\x93ìÅ\x99ë#\x10hë?Ú\x03\x93ôå')
+2025-04-24 14:22:07 — INFO — werkzeug — _log — Line: 97 — 192.168.66.85 - - [24/Apr/2025 14:22:07] "[35m[1m\x16\x03\x01\x02\x1a\x01\x00\x02\x16\x03\x03ÈLò]\x90gmm\x1c\x89k\x96\x0dLMA\x10\x82\x1asñTÐ>%\x86äÚÄ¥\x84¿ P_N«³Ð\x0fG\x93g\x82\x8a\x81Pn!û\x8d3,¢\x81jÓ\\\x86ö\x8a_\x19P¡\x00 \x8a\x8a\x13\x01\x13\x02\x13\x03À+À/À,À0Ì©Ì¨À\x13À\x14\x00\x9c\x00\x9d\x00/\x005\x01\x00\x01­êê\x00\x00\x00\x12\x00\x00\x00+\x00\x07\x06jj\x03\x04\x03\x03þ\x0d\x00ú\x00\x00\x01\x00\x01æ\x00 ÊÀ\x95\x00#gÎx\x7f÷\x89\x176\x19Q(\x1evó#`uO3\x8bk¨*.¾¦B\x00Ð\x90r*^i\x17\x80?KXª}ÿ|:c\x1c`ZyÙ\x1b|3Ç\x1ewuZ\x14 \x1aO\x82Ëzæç\x06\x9c\\î\x9b\x94Îºko¯|\x80\x92²ü\x12\x1dÄ®BN\x8a¯³\x8e\x88Ð\x1eòëÆõ{\x8e<v¼\x04U\x99\x8f\x95\x85\x94ÂÚ<°÷Jr\x09ð\x8cU`|5\x93ìÅ\x99ë#\x10hë?Ú\x03\x93ôå[0m" HTTPStatus.BAD_REQUEST -
+2025-04-24 14:22:07 — ERROR — werkzeug — _log — Line: 97 — 192.168.66.85 - - [24/Apr/2025 14:22:07] code 400, message Bad request version ('Ð[')
+2025-04-24 14:22:07 — INFO — werkzeug — _log — Line: 97 — 192.168.66.85 - - [24/Apr/2025 14:22:07] "[35m[1m\x16\x03\x01\x02\x1a\x01\x00\x02\x16\x03\x03K\x8b\x8eV\x17tÜÇ£ñ\x81pà\x8d`éÌ\x9ca\x86Û ÜîvØÞ\x9c=ix] c\x8fõkÃ\x80\x145Åãí\x10\x03\x89\x8cxnØ\x03À»\x0dia,¬iP»¯oæ\x00 zz\x13\x01\x13\x02\x13\x03À+À/À,À0Ì©Ì¨À\x13À\x14\x00\x9c\x00\x9d\x00/\x005\x01\x00\x01­ZZ\x00\x00\x00+\x00\x07\x06\x9a\x9a\x03\x04\x03\x03\x00\x05\x00\x05\x01\x00\x00\x00\x00\x00\x0b\x00\x02\x01\x00\x00\x12\x00\x00ÿ\x01\x00\x01\x00\x003\x00+\x00)\x9a\x9a\x00\x01\x00\x00\x1d\x00 ·wB\x14\x8c\x0d MÑs¼\x8fq\x99æùÜB=IãÜ{ä~¯Aá\x0c\x8dô;\x00-\x00\x02\x01\x01Di\x00\x05\x00\x03\x02h2þ\x0d\x00ú\x00\x00\x01\x00\x01d\x00 %\x1eÍ=Ö)\x8dzs©`ïüûa,&¢á\x8e6ªnù\x82ÏÜr]ì³$\x00Ð\x88_¥Ó/5Çx\x96£'C\x11Z\x03\x03\x17þyIî°P[$ÃX)+Åº\x83Òx´ª\x9e\x10#Q\x1f[ÐØ\x17¤´æ\x9eØF\x91\x83ª'êÒå9ù¶ ±\x15·ËN\x87/\x84*ÝÐâ\x8d\x8b \x03æø3pÊV\x87[±MCsr\x88ìz¼+g7`s\x93H\x15¥X\x9aãW?\x00üêôé\x94` \x97wõù&æG\x84\x06·\x85¸îï\x1c\x82ÿJ§\x85\x09åirÌþ ³\x7f`» Ð[[0m" HTTPStatus.BAD_REQUEST -
+2025-04-24 14:22:08 — ERROR — werkzeug — _log — Line: 97 — 192.168.66.85 - - [24/Apr/2025 14:22:08] code 400, message Bad request version ('êê\x13\x01\x13\x02\x13\x03À+À/À,À0Ì©Ì¨À\x13À\x14\x00\x9c\x00\x9d\x00/\x005\x01\x00\x01\x93')
+2025-04-24 14:22:08 — INFO — werkzeug — _log — Line: 97 — 192.168.66.85 - - [24/Apr/2025 14:22:08] "[35m[1m\x16\x03\x01\x02\x00\x01\x00\x01ü\x03\x03q{Oæ\x81ý\x9e\x82ã\x86\x1f¦\x08^Ñ\x92ÜêHwä0Ämøõ\x0f\x1c"zlø \x96I\x15\x9aäÚ ¬û!8ýôÑyIc¦þ²Ì÷Qw\x80±?à^¾\x0c2\x00 êê\x13\x01\x13\x02\x13\x03À+À/À,À0Ì©Ì¨À\x13À\x14\x00\x9c\x00\x9d\x00/\x005\x01\x00\x01\x93[0m" HTTPStatus.BAD_REQUEST -
+2025-04-24 14:22:08 — ERROR — werkzeug — _log — Line: 97 — 192.168.66.85 - - [24/Apr/2025 14:22:08] code 400, message Bad request version ('HMvþ»¤S©¨y')
+2025-04-24 14:22:08 — INFO — werkzeug — _log — Line: 97 — 192.168.66.85 - - [24/Apr/2025 14:22:08] "[35m[1m\x16\x03\x01\x02\x00\x01\x00\x01ü\x03\x03lHD9\x12\x9dªÄñ\x83³½Ì«Pç\x14Òn\x9d_ôÀâ\x89\x18)y÷O\x8a' 8)u HMvþ»¤S©¨y[0m" HTTPStatus.BAD_REQUEST -
+2025-04-24 14:22:27 — ERROR — werkzeug — _log — Line: 97 — 192.168.66.85 - - [24/Apr/2025 14:22:27] code 400, message Bad request version ('Ó¸6rÏ\x16Q·É\x0051x\x9cA\x90,\x95î\x9f>Jì\x945Ì©Åã\x90B|1®\x13ÿ\x01\x00\x01\x00\x00\x17\x00\x00\x00\x05\x00\x05\x01\x00\x00\x00\x00\x00\x12\x00\x00\x00')
+2025-04-24 14:22:27 — INFO — werkzeug — _log — Line: 97 — 192.168.66.85 - - [24/Apr/2025 14:22:27] "[35m[1m\x16\x03\x01\x02\x00\x01\x00\x01ü\x03\x03\x10\x8d$"\x83Ù\x95)\x1cHÀ\x08¶\x13\x15o-L\x08¾ðêÁªA\x9d\x12ÿBèÿÞ Àñ\x86T´ò«ãÖÌö\x87[#H/´PÚtVc\x8e\x84\x071\x7fº±\x142p\x00 ZZ\x13\x01\x13\x02\x13\x03À+À/À,À0Ì©Ì¨À\x13À\x14\x00\x9c\x00\x9d\x00/\x005\x01\x00\x01\x93\x1a\x1a\x00\x00\x00\x1b\x00\x03\x02\x00\x02\x00\x0d\x00\x12\x00\x10\x04\x03\x08\x04\x04\x01\x05\x03\x08\x05\x05\x01\x08\x06\x06\x01\x00\x0b\x00\x02\x01\x00\x00\x10\x00\x0e\x00\x0c\x02h2\x08http/1.1\x003\x00+\x00)ºº\x00\x01\x00\x00\x1d\x00 Þ´Óò\x19"Ùx\x9aø^eê\x92¤'·\x04¸=\x8e³rt\x99{£)ÒuþTþ\x0d\x00º\x00\x00\x01\x00\x01\x00\x00 \x89WpÊßû\\\x9d¤Õ\x1dk\x16\x00¨B]\x97ÊòT8A\x1c¥ò\x96ú°R<\x08\x00\x90Ñ\x84ÿ\x08±ÀíÑóè\x96u\x04*\x02\x84Ý\x03\x02\x94e,\x8c©D?~Ç\x09ç\x04V\x8e`ÌP\x92\x1b°#ÐÁ\x0dÑÕÆ_ÿ(Å\x7fôUgÜ\x88ù¬<ò\x11¢6\x8f,¤Ó\x12i\x12ÈMEÂOJ\x0e]´U:M[%\x8fr\x7f}9¹«k!\x00tÕ\x90\x88\x05¦àÖ¥\x0f\x9c\x07\x8fÉ\x0cÓ¸6rÏ\x16Q·É\x0051x\x9cA\x90,\x95î\x9f>Jì\x945Ì©Åã\x90B|1®\x13ÿ\x01\x00\x01\x00\x00\x17\x00\x00\x00\x05\x00\x05\x01\x00\x00\x00\x00\x00\x12\x00\x00\x00[0m" HTTPStatus.BAD_REQUEST -
+2025-04-24 14:22:27 — ERROR — werkzeug — _log — Line: 97 — 192.168.66.85 - - [24/Apr/2025 14:22:27] code 400, message Bad request version ('\x00\x12\x00\x10\x04\x03\x08\x04\x04\x01\x05\x03\x08\x05\x05\x01\x08\x06\x06\x01\x00')
+2025-04-24 14:22:27 — INFO — werkzeug — _log — Line: 97 — 192.168.66.85 - - [24/Apr/2025 14:22:27] "[35m[1m\x16\x03\x01\x02\x1a\x01\x00\x02\x16\x03\x03Øe\x9a\x8a;\x11B\x93¿vs\x91\x9f\x02\x8e>M0È\x1aUÉU_\x98\x94çgÕ·rÊ ü\x00ätªLe=r\x12káô ã ³¸õ\x81§\x83\x8dþáÌ°\x88³ôÑ9\x00 ::\x13\x01\x13\x02\x13\x03À+À/À,À0Ì©Ì¨À\x13À\x14\x00\x9c\x00\x9d\x00/\x005\x01\x00\x01­**\x00\x00\x00\x12\x00\x00Di\x00\x05\x00\x03\x02h2\x003\x00+\x00)JJ\x00\x01\x00\x00\x1d\x00 \x94b\x87²W\x00\\Í\x0cRrÏ=EÔ ²p\x14íerÉ\x0c¶"ÔÊ1/tI\x00\x05\x00\x05\x01\x00\x00\x00\x00\x00\x17\x00\x00\x00\x1b\x00\x03\x02\x00\x02þ\x0d\x00ú\x00\x00\x01\x00\x01Å\x00 ®ægtzÑ+'\x86w£\x98Äá\x820¸}\x85_­$\x8d\x9c\x045Ú{dÐWW\x00Ð*Ü«J\x12ÿ\x86v6^Àêw¬]\x82\x0b ºn\x10ÓhÃð\x07½\x16bÛ\x9a*?\x1b|ªÅ¢W\x83\x95Áó\x1auf¬»8á\x0bc\x9aÐ\x9f{kG\x13{éj×\x92\x0d¬?þP\x05LÜB§bÎKH\x00]¹\x1e%\x9f¸é"j \x07ï_`\x08b»âß½°&\x1ad©Z\x8e²òL\x8cyþ¿Òô7<à¸;\x96«2\x11¿Ë\x0c)¦H5oi\x12«è@\x19¬r\x82½ñÇ½\x10Ëa\x9c?\x05x?\x174\x8e=-µ(Ë@\x1a©¦\x0f\x04\x98\x86¨éIñYÎ^HG×ÔÎç*«\x16¤ª,Q\x93vJeÛ|>'Õ\x14Í\x0b\x16_\x1eú0¬-ÿ\x01\x00\x01\x00\x00+\x00\x07\x06ÚÚ\x03\x04\x03\x03\x00\x0d\x00\x12\x00\x10\x04\x03\x08\x04\x04\x01\x05\x03\x08\x05\x05\x01\x08\x06\x06\x01\x00[0m" HTTPStatus.BAD_REQUEST -
+2025-04-24 14:22:29 — INFO — werkzeug — _log — Line: 97 — 192.168.66.85 - - [24/Apr/2025 14:22:29] "GET / HTTP/1.1" 200 -
+2025-04-24 14:22:32 — INFO — werkzeug — _log — Line: 97 — 192.168.66.85 - - [24/Apr/2025 14:22:32] "GET /static/libraryPic.avif HTTP/1.1" 200 -
+2025-04-24 14:22:48 — INFO — werkzeug — _log — Line: 97 — 192.168.66.85 - - [24/Apr/2025 14:22:48] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-04-24 14:24:39 — INFO — root — register — Line: 142 — Register Page Fetched 
+2025-04-24 14:24:39 — INFO — werkzeug — _log — Line: 97 — 192.168.66.43 - - [24/Apr/2025 14:24:39] "GET /register HTTP/1.1" 200 -
+2025-04-24 14:24:39 — INFO — werkzeug — _log — Line: 97 — 192.168.66.43 - - [24/Apr/2025 14:24:39] "[36mGET /static/libraryPic.avif HTTP/1.1[0m" 304 -
+2025-04-24 14:25:01 — INFO — root — register — Line: 142 — Register Page Fetched 
+2025-04-24 14:25:32 — INFO — root — register — Line: 182 — Student Is Registered Successfully : 6809fc6818230b64df85f2b0
+2025-04-24 14:25:32 — INFO — werkzeug — _log — Line: 97 — 192.168.66.43 - - [24/Apr/2025 14:25:32] "[32mPOST /register HTTP/1.1[0m" 302 -
+2025-04-24 14:25:32 — INFO — werkzeug — _log — Line: 97 — 192.168.66.43 - - [24/Apr/2025 14:25:32] "GET / HTTP/1.1" 200 -
+2025-04-24 14:25:32 — INFO — werkzeug — _log — Line: 97 — 192.168.66.43 - - [24/Apr/2025 14:25:32] "[36mGET /static/libraryPic.avif HTTP/1.1[0m" 304 -
+2025-04-24 14:25:44 — INFO — werkzeug — _log — Line: 97 — 192.168.66.43 - - [24/Apr/2025 14:25:44] "[32mPOST / HTTP/1.1[0m" 302 -
+2025-04-24 14:25:46 — INFO — werkzeug — _log — Line: 97 — 192.168.66.43 - - [24/Apr/2025 14:25:46] "GET /studentDash HTTP/1.1" 200 -
+2025-04-24 14:25:49 — INFO — werkzeug — _log — Line: 97 — 192.168.66.43 - - [24/Apr/2025 14:25:49] "[36mGET /static/libraryPic.avif HTTP/1.1[0m" 304 -
+2025-04-24 14:26:37 — INFO — root — studentDash — Line: 434 — Search By: subject, Search Term: COMPUTER SCIENCE
+2025-04-24 14:26:37 — INFO — root — studentDash — Line: 436 — Books Are : [{'_id': ObjectId('6806a25ae471cd8e59b5d840'), 'name': 'MACHINE LEARNING', 'id': 'ML001', 'writter': 'SAM KUMAR', 'subject': 'COMPUTER SCIENCE', 'available': 0, 'borrowers': [{'roll_number': 'Y231705280', 'date_of_issue': '22-04-25'}, {'roll_number': 'Y23170528', 'date_of_issue': '24-04-25'}], 'totalborrowed': 6}, {'_id': ObjectId('68078a38f5587f19fc1fd46e'), 'name': 'LET US C', 'id': 'C001', 'writter': 'AMAN ARYA', 'subject': 'COMPUTER SCIENCE', 'available': 2, 'borrowers': [{'roll_number': 'Y23195304', 'date_of_issue': '24-04-25'}, {'roll_number': '1234', 'date_of_issue': '24-04-25'}], 'totalborrowed': 3}]
+2025-04-24 14:26:37 — INFO — root — studentDash — Line: 450 — BookData : {'name': 'MACHINE LEARNING', 'id': 'ML001', 'writter': 'SAM KUMAR', 'subject': 'COMPUTER SCIENCE', 'totalAvailable': 0, 'totalIssued': 6}
+2025-04-24 14:26:37 — INFO — root — studentDash — Line: 450 — BookData : {'name': 'LET US C', 'id': 'C001', 'writter': 'AMAN ARYA', 'subject': 'COMPUTER SCIENCE', 'totalAvailable': 2, 'totalIssued': 3}
+2025-04-24 14:26:37 — INFO — root — studentDash — Line: 454 — BookList Are  : [{'name': 'MACHINE LEARNING', 'id': 'ML001', 'writter': 'SAM KUMAR', 'subject': 'COMPUTER SCIENCE', 'totalAvailable': 0, 'totalIssued': 6}, {'name': 'LET US C', 'id': 'C001', 'writter': 'AMAN ARYA', 'subject': 'COMPUTER SCIENCE', 'totalAvailable': 2, 'totalIssued': 3}]
+2025-04-24 14:26:37 — INFO — root — studentDash — Line: 456 — Book Searched Successfully
+2025-04-24 14:26:37 — INFO — werkzeug — _log — Line: 97 — 192.168.66.43 - - [24/Apr/2025 14:26:37] "POST /studentDash HTTP/1.1" 200 -
+2025-04-24 14:26:38 — INFO — werkzeug — _log — Line: 97 — 192.168.66.43 - - [24/Apr/2025 14:26:38] "[36mGET /static/libraryPic.avif HTTP/1.1[0m" 304 -
+2025-04-24 14:27:02 — INFO — root — addBookToCart — Line: 564 — Add To Cart Called Successfully
+2025-04-24 14:27:04 — INFO — root — addBookToCart — Line: 588 — Successfully Added Book To The Cart
+2025-04-24 14:27:04 — INFO — werkzeug — _log — Line: 97 — 192.168.66.43 - - [24/Apr/2025 14:27:04] "POST /add_to_cart HTTP/1.1" 200 -
+2025-04-24 14:27:14 — INFO — werkzeug — _log — Line: 97 — 192.168.66.43 - - [24/Apr/2025 14:27:14] "POST /download_book HTTP/1.1" 200 -
+2025-04-24 14:27:25 — INFO — werkzeug — _log — Line: 97 — 192.168.66.43 - - [24/Apr/2025 14:27:25] "GET /cart HTTP/1.1" 200 -
+2025-04-24 14:27:26 — INFO — werkzeug — _log — Line: 97 — 192.168.66.43 - - [24/Apr/2025 14:27:26] "[36mGET /static/libraryPic.avif HTTP/1.1[0m" 304 -
+2025-04-24 14:27:33 — INFO — root — remove_book — Line: 660 — BookID  : ML001
+2025-04-24 14:27:41 — INFO — werkzeug — _log — Line: 97 — 192.168.66.43 - - [24/Apr/2025 14:27:41] "[32mPOST /remove_book HTTP/1.1[0m" 302 -
+2025-04-24 14:27:44 — INFO — werkzeug — _log — Line: 97 — 192.168.66.43 - - [24/Apr/2025 14:27:44] "GET /cart HTTP/1.1" 200 -
+2025-04-24 14:27:44 — INFO — werkzeug — _log — Line: 97 — 192.168.66.43 - - [24/Apr/2025 14:27:44] "[36mGET /static/libraryPic.avif HTTP/1.1[0m" 304 -
+2025-04-24 14:27:51 — INFO — root — profile — Line: 551 — Student Data For Profile Is : {'name': 'SATYAM PRAKASH', 'course': 'BCA', 'roll_number': '123', 'email': 'sp5367935@gmail.com', 'fine': 0, 'total_books_issued': 0, 'total_cart_item': 0, 'profile_image': '/profile_imageFetch/123'}
+2025-04-24 14:27:51 — INFO — werkzeug — _log — Line: 97 — 192.168.66.43 - - [24/Apr/2025 14:27:51] "GET /profile HTTP/1.1" 200 -
+2025-04-24 14:27:51 — INFO — werkzeug — _log — Line: 97 — 192.168.66.43 - - [24/Apr/2025 14:27:51] "[33mGET /api/placeholder/1200/300 HTTP/1.1[0m" 404 -
+2025-04-24 14:27:51 — INFO — werkzeug — _log — Line: 97 — 192.168.66.43 - - [24/Apr/2025 14:27:51] "[36mGET /static/libraryPic.avif HTTP/1.1[0m" 304 -
+2025-04-24 14:27:52 — INFO — werkzeug — _log — Line: 97 — 192.168.66.43 - - [24/Apr/2025 14:27:52] "GET /profile_imageFetch/123 HTTP/1.1" 200 -
+2025-04-24 14:28:14 — INFO — werkzeug — _log — Line: 97 — 192.168.66.43 - - [24/Apr/2025 14:28:14] "[32mGET /logout HTTP/1.1[0m" 302 -
+2025-04-24 14:28:14 — INFO — werkzeug — _log — Line: 97 — 192.168.66.43 - - [24/Apr/2025 14:28:14] "GET / HTTP/1.1" 200 -
+2025-04-24 14:28:14 — INFO — werkzeug — _log — Line: 97 — 192.168.66.43 - - [24/Apr/2025 14:28:14] "[36mGET /static/libraryPic.avif HTTP/1.1[0m" 304 -
+2025-04-24 14:28:24 — WARNING — root — login — Line: 128 — Incorrct Password
+2025-04-24 14:28:24 — INFO — werkzeug — _log — Line: 97 — 192.168.66.43 - - [24/Apr/2025 14:28:24] "POST / HTTP/1.1" 200 -
+2025-04-24 14:28:25 — INFO — werkzeug — _log — Line: 97 — 192.168.66.43 - - [24/Apr/2025 14:28:25] "[36mGET /static/libraryPic.avif HTTP/1.1[0m" 304 -
+2025-04-24 14:28:59 — INFO — root — login — Line: 119 — Admin Login Successfully Name : THAKUR SATYAM Id : 68064dca3c6346b1ff6dab9a
+2025-04-24 14:28:59 — INFO — werkzeug — _log — Line: 97 — 192.168.66.43 - - [24/Apr/2025 14:28:59] "[32mPOST / HTTP/1.1[0m" 302 -
+2025-04-24 14:28:59 — INFO — werkzeug — _log — Line: 97 — 192.168.66.43 - - [24/Apr/2025 14:28:59] "GET /adminDash HTTP/1.1" 200 -
+2025-04-24 14:28:59 — INFO — werkzeug — _log — Line: 97 — 192.168.66.43 - - [24/Apr/2025 14:28:59] "[36mGET /static/libraryPic.avif HTTP/1.1[0m" 304 -
+2025-04-24 14:29:29 — INFO — root — adminDash — Line: 927 — Pie Chart with Legend Generated Successfully
+2025-04-24 14:29:29 — INFO — werkzeug — _log — Line: 97 — 192.168.66.43 - - [24/Apr/2025 14:29:29] "POST /adminDash HTTP/1.1" 200 -
+2025-04-24 14:29:29 — INFO — werkzeug — _log — Line: 97 — 192.168.66.43 - - [24/Apr/2025 14:29:29] "[36mGET /static/libraryPic.avif HTTP/1.1[0m" 304 -
+2025-04-24 14:29:57 — INFO — root — adminDash — Line: 746 — Book Is Out Of Stock
+2025-04-24 14:29:57 — INFO — werkzeug — _log — Line: 97 — 192.168.66.43 - - [24/Apr/2025 14:29:57] "[32mPOST /adminDash HTTP/1.1[0m" 302 -
+2025-04-24 14:29:57 — INFO — werkzeug — _log — Line: 97 — 192.168.66.43 - - [24/Apr/2025 14:29:57] "GET /adminDash HTTP/1.1" 200 -
+2025-04-24 14:29:57 — INFO — werkzeug — _log — Line: 97 — 192.168.66.43 - - [24/Apr/2025 14:29:57] "[36mGET /static/libraryPic.avif HTTP/1.1[0m" 304 -
+2025-04-24 14:30:07 — INFO — root — adminDash — Line: 726 — mr.satyam824@gmail.com,LET US C,COMPUTER SCIENCE,24-04-25,01-05-25
+2025-04-24 14:30:07 — INFO — root — sendBookIssueMail — Line: 937 — Send Mail Function Called
+2025-04-24 14:30:13 — INFO — root — sendBookIssueMail — Line: 985 — Mail Sent To The Student
+2025-04-24 14:30:13 — INFO — root — adminDash — Line: 728 — Book Issued Successfully,Book_ID :C001, Student_Rollno :111
+2025-04-24 14:30:13 — INFO — werkzeug — _log — Line: 97 — 192.168.66.43 - - [24/Apr/2025 14:30:13] "[32mPOST /adminDash HTTP/1.1[0m" 302 -
+2025-04-24 14:30:13 — INFO — werkzeug — _log — Line: 97 — 192.168.66.43 - - [24/Apr/2025 14:30:13] "GET /adminDash HTTP/1.1" 200 -
+2025-04-24 14:30:13 — INFO — werkzeug — _log — Line: 97 — 192.168.66.43 - - [24/Apr/2025 14:30:13] "[36mGET /static/libraryPic.avif HTTP/1.1[0m" 304 -
+2025-04-24 14:32:03 — INFO — werkzeug — _log — Line: 97 — 192.168.66.43 - - [24/Apr/2025 14:32:03] "[32mGET /logout HTTP/1.1[0m" 302 -
+2025-04-24 14:32:03 — INFO — werkzeug — _log — Line: 97 — 192.168.66.43 - - [24/Apr/2025 14:32:03] "GET / HTTP/1.1" 200 -
+2025-04-24 14:32:03 — INFO — werkzeug — _log — Line: 97 — 192.168.66.43 - - [24/Apr/2025 14:32:03] "[36mGET /static/libraryPic.avif HTTP/1.1[0m" 304 -
+2025-04-24 14:32:10 — WARNING — root — login — Line: 128 — Incorrct Password
+2025-04-24 14:32:10 — INFO — werkzeug — _log — Line: 97 — 192.168.66.43 - - [24/Apr/2025 14:32:10] "POST / HTTP/1.1" 200 -
+2025-04-24 14:32:10 — INFO — werkzeug — _log — Line: 97 — 192.168.66.43 - - [24/Apr/2025 14:32:10] "[36mGET /static/libraryPic.avif HTTP/1.1[0m" 304 -
+2025-04-24 14:32:34 — ERROR — root — login — Line: 104 — Error In Finding USer For Login : {e}
+2025-04-24 14:32:34 — ERROR — app — log_exception — Line: 875 — Exception on / [POST]
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python39\lib\site-packages\flask\app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python39\lib\site-packages\flask\app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python39\lib\site-packages\flask\app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python39\lib\site-packages\flask\app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "d:\PROJECT.H\LIBRARY_WEB_PAGE\app.py", line 105, in login
+    if user:
+UnboundLocalError: local variable 'user' referenced before assignment
+2025-04-24 14:32:34 — INFO — werkzeug — _log — Line: 97 — 192.168.66.43 - - [24/Apr/2025 14:32:34] "[35m[1mPOST / HTTP/1.1[0m" 500 -
+2025-04-24 14:32:36 — INFO — werkzeug — _log — Line: 97 — 192.168.66.43 - - [24/Apr/2025 14:32:36] "GET / HTTP/1.1" 200 -
+2025-04-24 14:32:36 — INFO — werkzeug — _log — Line: 97 — 192.168.66.43 - - [24/Apr/2025 14:32:36] "[36mGET /static/libraryPic.avif HTTP/1.1[0m" 304 -
+2025-04-24 14:32:52 — INFO — werkzeug — _log — Line: 97 — 192.168.66.43 - - [24/Apr/2025 14:32:52] "[32mPOST / HTTP/1.1[0m" 302 -
+2025-04-24 14:32:53 — INFO — werkzeug — _log — Line: 97 — 192.168.66.43 - - [24/Apr/2025 14:32:53] "GET /studentDash HTTP/1.1" 200 -
+2025-04-24 14:32:53 — INFO — werkzeug — _log — Line: 97 — 192.168.66.43 - - [24/Apr/2025 14:32:53] "[36mGET /static/libraryPic.avif HTTP/1.1[0m" 304 -
+2025-04-24 14:33:22 — INFO — root — profile — Line: 551 — Student Data For Profile Is : {'name': 'SATYAM PRAKASH', 'course': 'BCA', 'roll_number': '123', 'email': 'sp5367935@gmail.com', 'fine': 0, 'total_books_issued': 0, 'total_cart_item': 0, 'profile_image': '/profile_imageFetch/123'}
+2025-04-24 14:33:22 — INFO — werkzeug — _log — Line: 97 — 192.168.66.43 - - [24/Apr/2025 14:33:22] "GET /profile HTTP/1.1" 200 -
+2025-04-24 14:33:22 — INFO — werkzeug — _log — Line: 97 — 192.168.66.43 - - [24/Apr/2025 14:33:22] "[33mGET /api/placeholder/1200/300 HTTP/1.1[0m" 404 -
+2025-04-24 14:33:22 — INFO — werkzeug — _log — Line: 97 — 192.168.66.43 - - [24/Apr/2025 14:33:22] "[36mGET /static/libraryPic.avif HTTP/1.1[0m" 304 -
+2025-04-24 14:33:24 — INFO — werkzeug — _log — Line: 97 — 192.168.66.43 - - [24/Apr/2025 14:33:24] "GET /profile_imageFetch/123 HTTP/1.1" 200 -

@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Forgot Password</title>
+    <style>
+      body {
+        background-color: #f8f9fa;
+        background-image: url("/static/libraryPic.avif");
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+      .form-container {
+        background:rgba(255,255,255,0.4);
+        padding: 2rem;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        width: 100%;
+        max-width: 400px;
+      }
+      h2 {
+        text-align: center;
+        margin-bottom: 1rem;
+      }
+      .form-group {
+        margin-bottom: 1rem;
+      }
+      label {
+        display: block;
+        margin-bottom: 0.5rem;
+        font-weight: 600;
+      }
+      input {
+        width: 100%;
+        padding: 0.5rem;
+        font-size: 1rem;
+        border: 1px solid #ccc;
+        border-radius: 6px;
+      }
+      button {
+        width: 100%;
+        padding: 0.75rem;
+        background: #007bff;
+        border: none;
+        color: white;
+        font-size: 1rem;
+        font-weight: bold;
+        border-radius: 6px;
+        cursor: pointer;
+      }
+      button:hover {
+        background: #0056b3;
+      }
+      .flash {
+        padding: 10px;
+        border-radius: 5px;
+        margin-bottom: 1rem;
+        font-weight: bold;
+      }
+      .flash.success {
+        background-color: #d4edda;
+        color: #155724;
+        border: 1px solid #c3e6cb;
+      }
+      .flash.error {
+        background-color: #f8d7da;
+        color: #721c24;
+        border: 1px solid #f5c6cb;
+      }
+      #timer {
+        color: #ff0000;
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="form-container">
+      <h2>Forgot Password</h2>
+
+      {% with messages = get_flashed_messages(with_categories=true) %} {% if
+      messages %} {% for category, message in messages %}
+      <div class="flash {{ category }}">{{ message }}</div>
+      {% endfor %} {% endif %} {% endwith %}
+
+      <!-- Step 1: Request OTP -->
+      <form method="POST" id="step1" action="/forgot">
+        <div class="form-group">
+          <label for="roll_number">Enter Roll Number</label>
+          <input type="text" name="roll_number" id="roll_number" required />
+        </div>
+        <div class="form-group">
+          <label for="email">Enter Registered Email ID</label>
+          <input type="email" name="email" id="email" required />
+        </div>
+        <button type="submit" name="step" value="1">Send OTP</button>
+      </form>
+
+      <!-- Step 2: Verify OTP -->
+      <form method="POST" id="step2" action="/forgot" style="display: none">
+        <div class="form-group">
+          <label for="otp">Enter OTP</label>
+          <input type="text" name="otp" id="otp" required />
+          <small style="display: block; margin-top: 0.5rem; color: #888">
+            OTP will expire in <span id="timer">02:00</span> minutes.
+          </small>
+        </div>
+        <button type="submit" name="step" value="2" id="verifyBtn">
+          Verify OTP
+        </button>
+      </form>
+
+      <!-- Step 3: Reset Password -->
+      <form method="POST" id="step3" action="/forgot" style="display: none">
+        <div class="form-group">
+          <label for="new_password">Enter New Password</label>
+          <input
+            type="password"
+            name="new_password"
+            id="new_password"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <label for="confirm_password">Enter Password Again</label>
+          <input
+            type="password"
+            name="confirm_password"
+            id="confirm_password"
+            required
+          />
+        </div>
+        <button type="submit" name="step" value="3">Reset Password</button>
+      </form>
+    </div>
+    <script>
+      // Flash message auto disappear after 5 seconds
+      setTimeout(() => {
+        document.querySelectorAll(".flash").forEach((flash) => {
+          flash.style.transition = "opacity 0.5s ease";
+          flash.style.opacity = "0";
+          setTimeout(() => flash.remove(), 500); // Completely remove it after fade out
+        });
+      }, 5000);
+
+      // Step-handling logic
+      const urlParams = new URLSearchParams(window.location.search);
+      const step = urlParams.get("step");
+
+      if (step === "2") {
+        document.getElementById("step1").style.display = "none";
+        document.getElementById("step2").style.display = "block";
+
+        // Countdown Timer (2 minutes = 120 seconds)
+        let countdown = 120;
+        const timerDisplay = document.getElementById("timer");
+        const verifyBtn = document.getElementById("verifyBtn");
+
+        const interval = setInterval(() => {
+          const minutes = Math.floor(countdown / 60);
+          const seconds = countdown % 60;
+          timerDisplay.textContent = `${minutes
+            .toString()
+            .padStart(2, "0")}:${seconds.toString().padStart(2, "0")}`;
+
+          countdown--;
+
+          if (countdown < 0) {
+            clearInterval(interval);
+            timerDisplay.textContent = "Expired";
+            verifyBtn.disabled = true;
+            verifyBtn.textContent = "OTP Expired";
+            verifyBtn.style.backgroundColor = "#ccc";
+            verifyBtn.style.cursor = "not-allowed";
+          }
+        }, 1000);
+      } else if (step === "3") {
+        document.getElementById("step1").style.display = "none";
+        document.getElementById("step3").style.display = "block";
+      }
+    </script>
+  </body>
+</html>

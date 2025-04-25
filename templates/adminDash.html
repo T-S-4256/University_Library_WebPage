@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library Dashboard | Ranganathan Pustakalaya</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <style>
+      :root {
+        --primary-color: #0d6efd;
+        --primary-dark: #0b5ed7;
+        --secondary-color: #6c757d;
+        --success-color: #198754;
+        --light-color: #f8f9fa;
+        --dark-color: #343a40;
+        --border-radius: 0.5rem;
+      }
+      html, body {
+        height: 100%;
+        margin: 0;
+      }
+
+      body {
+        background-image: url("/static/libraryPic.avif");
+        background-size: cover;
+        background-attachment: fixed;
+        font-family: 'Segoe UI', sans-serif;
+        padding-top: 60px;
+        padding-bottom: 60px;
+        color: rgb(0, 0, 0);
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .main-content {
+        flex: 1;
+      }
+
+      /* Navbar Styles */
+      .navbar {
+        background: linear-gradient(135deg, #0d6efd, #0a58ca);
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        padding: 0.8rem 1rem;
+      }
+
+      .navbar-brand {
+        color: white;
+        font-size: 1.4rem;
+        font-weight: bold;
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+      }
+
+      .navbar-brand:hover {
+        color: #d0eaff;
+      }
+
+      .nav-text {
+        color: white;
+        font-weight: 600;
+        font-size: 1.2rem;
+      }
+
+      .user-section {
+        display: flex;
+        align-items: center;
+        color: white;
+      }
+
+      .user-avatar {
+        width: 36px;
+        height: 36px;
+        border-radius: 50%;
+        background-color: #f8f9fa;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-right: 10px;
+        color: var(--primary-color);
+      }
+
+      /* Flash Message Styles */
+      .flash-message {
+        position: fixed;
+        top: 80px;
+        right: 20px;
+        z-index: 9999;
+        width: auto;
+        max-width: 350px;
+      }
+
+      /* Card and Form Styles */
+      .dashboard-card {
+        background-color: white;
+        border-radius: var(--border-radius);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+        margin-bottom: 1.5rem;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        overflow: hidden;
+      }
+
+      .dashboard-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+      }
+
+      .dashboard-card-header {
+        background: linear-gradient(to right, #f8f9fa, #e9ecef);
+        padding: 1rem;
+        border-bottom: 1px solid #dee2e6;
+      }
+
+      .form-section {
+        background-color: white;
+        border-radius: var(--border-radius);
+        padding: 20px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+        margin-bottom: 2rem;
+      }
+
+      .form-section h5 {
+        color: var(--primary-dark);
+        font-weight: 600;
+        margin-bottom: 1.2rem;
+        padding-bottom: 0.5rem;
+        border-bottom: 2px solid #e9ecef;
+      }
+
+      /* Button Styles */
+      .btn-group-custom {
+        flex-wrap: wrap;
+        justify-content: center;
+        margin-bottom: 1.5rem;
+      }
+
+      .btn-group-custom .btn {
+        margin: 5px;
+        font-weight: 500;
+        padding: 0.6rem 1.2rem;
+        border-radius: var(--border-radius);
+        transition: all 0.2s ease-in-out;
+        position: relative;
+        overflow: hidden;
+        z-index: 1;
+      }
+
+      .btn-group-custom .btn:before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: rgba(255, 255, 255, 0.1);
+        transition: all 0.3s ease-in-out;
+        z-index: -1;
+      }
+
+      .btn-group-custom .btn:hover:before {
+        left: 0;
+      }
+
+      .btn-group-custom .btn:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      }
+
+      .btn-group-custom .btn.active {
+        background-color: #ffc107;
+        color: #212529;
+        border-color: #ffc107;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+      }
+
+      /* Table Styles */
+      .table-container {
+        overflow-x: auto;
+        margin-top: 1.5rem;
+      }
+
+      .custom-table {
+        width: 100%;
+        border-collapse: separate;
+        border-spacing: 0;
+      }
+
+      .custom-table th {
+        background: linear-gradient(to right, #0d6efd, #0a58ca);
+        color: white;
+        font-weight: 600;
+        text-transform: uppercase;
+        font-size: 0.85rem;
+        letter-spacing: 0.5px;
+      }
+
+      .custom-table th, .custom-table td {
+        padding: 0.75rem;
+        vertical-align: middle;
+      }
+
+      .custom-table tbody tr:nth-of-type(odd) {
+        background-color: rgba(0, 0, 0, 0.02);
+      }
+
+      .custom-table tbody tr:hover {
+        background-color: rgba(13, 110, 253, 0.05);
+      }
+
+      /* Graph Section */
+      .graph-container {
+        background-color: white;
+        border-radius: var(--border-radius);
+        padding: 20px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+      }
+
+      .graph-container h3 {
+        color: var(--primary-dark);
+        font-weight: 600;
+        margin-bottom: 1.2rem;
+        padding-bottom: 0.5rem;
+        border-bottom: 2px solid #e9ecef;
+      }
+
+      .graph-image {
+        max-width: 100%;
+        height: auto;
+        border-radius: var(--border-radius);
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      }
+
+      .footer {
+        background-color: #1a237e;
+        color: white;
+        padding: 20px 0;
+        margin-top: auto;
+        text-align: center;
+        box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.1);
+      }
+
+      .footer p {
+        font-size: 1rem;
+        margin: 5px 0;
+      }
+
+      .footer a {
+        text-decoration: none;
+        color: #90caf9;
+        transition: color 0.3s ease;
+      }
+
+      .footer a:hover {
+        color: white;
+        text-decoration: underline;
+      }
+      @media (max-width: 768px) {
+        body {
+          padding-top: 56px;
+        }
+        
+        .btn-group-custom .btn {
+          width: 45%;
+          margin: 5px;
+        }
+        
+        .form-section {
+          padding: 15px;
+        }
+      }
+
+      @media (max-width: 576px) {
+        .btn-group-custom .btn {
+          width: 100%;
+        }
+        
+        .user-section span {
+          display: none;
+        }
+
+        .navbar-brand {
+          font-size: 1.2rem;
+        }
+        
+        .form-section h5 {
+          font-size: 1.2rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Fixed Navbar -->
+    <nav class="navbar navbar-expand-lg fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="#">
+          <i class="fas fa-book-reader me-2"></i>Ranganathan Pustakalaya
+        </a>
+        <div class="navbar-text mx-auto d-none d-lg-block">
+          <span class="nav-text">Dr. Harisingh Gour University Sagar M.P</span>
+        </div>
+        <div class="user-section">
+          <div class="user-avatar">
+            <i class="fas fa-user"></i>
+          </div>
+          <span class="me-3 d-none d-sm-inline">{{user['name']}}</span>
+          <a href="{{ url_for('logout') }}" class="btn btn-sm btn-light">
+            <i class="fas fa-sign-out-alt me-1"></i>Logout
+          </a>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Flash Messages -->
+    {% with messages = get_flashed_messages(with_categories=true) %} 
+    {% if messages %}
+    <div class="flash-message">
+      {% for category, message in messages %}
+      <div class="alert alert-{{ category }} alert-dismissible fade show mb-2" role="alert">
+        {{ message }}
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+      </div>
+      {% endfor %}
+    </div>
+    {% endif %} 
+    {% endwith %}
+
+    <!-- Main Content -->
+    <div class="main-content">
+      <div class="container mt-4">
+
+        <!-- Navigation Buttons -->
+        <div class="row mb-4">
+          <div class="col-12">
+            <div class="btn-group btn-group-custom d-flex" role="group">
+              <button class="btn btn-primary add" onclick="showForm('add')">
+                <i class="fas fa-plus-circle me-2"></i>Add New Book
+              </button>
+              <button class="btn btn-primary issue" onclick="showForm('issue')">
+                <i class="fas fa-hand-holding-heart me-2"></i>Issue Book
+              </button>
+              <button class="btn btn-primary return" onclick="showForm('return')">
+                <i class="fas fa-undo-alt me-2"></i>Return Book
+              </button>
+              <button class="btn btn-primary search" onclick="showForm('search')">
+                <i class="fas fa-search me-2"></i>Search Book
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Forms Section -->
+        <div class="row">
+          <div class="col-12">
+            <!-- Add Book Form -->
+            <div id="add-form" class="form-section" style="display: none">
+              <h5><i class="fas fa-plus-circle me-2"></i>Add New Book</h5>
+              <form id="add-book-form" action="{{ url_for('add_book') }}" method="POST">
+                <div class="row">
+                  <div class="col-md-6 mb-3">
+                    <label class="form-label">Book Name</label>
+                    <input name="name" type="text" class="form-control" required />
+                  </div>
+                  <div class="col-md-6 mb-3">
+                    <label class="form-label">Book ID</label>
+                    <input name="id" type="text" class="form-control" required />
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-6 mb-3">
+                    <label class="form-label">Book Writer</label>
+                    <input name="writter" type="text" class="form-control" required />
+                  </div>
+                  <div class="col-md-6 mb-3">
+                    <label class="form-label">Book Subject</label>
+                    <input name="subject" type="text" class="form-control" required />
+                  </div>
+                </div>
+                <div class="mb-3">
+                  <label class="form-label">Total Available</label>
+                  <input name="available" type="number" class="form-control" required />
+                </div>
+                <button type="submit" class="btn btn-success">
+                  <i class="fas fa-save me-2"></i>Add Book
+                </button>
+              </form>
+            </div>
+
+            <!-- Issue Book Form -->
+            <div id="issue-form" class="form-section" style="display: none">
+              <h5><i class="fas fa-hand-holding-heart me-2"></i>Issue Book</h5>
+              <form method="POST">
+                <div class="row">
+                  <div class="col-md-6 mb-3">
+                    <label class="form-label">Student Roll Number</label>
+                    <input name="roll_number" type="text" class="form-control" required />
+                  </div>
+                  <div class="col-md-6 mb-3">
+                    <label class="form-label">Book ID</label>
+                    <input name="book_id" type="text" class="form-control" required />
+                  </div>
+                </div>
+                <button type="submit" name="submit" value="issue_book" class="btn btn-success">
+                  <i class="fas fa-check-circle me-2"></i>Issue Book
+                </button>
+              </form>
+            </div>
+
+            <!-- Return Book Form -->
+            <div id="return-form" class="form-section" style="display: none">
+              <h5><i class="fas fa-undo-alt me-2"></i>Return Book</h5>
+              <form method="POST">
+                <div class="row">
+                  <div class="col-md-6 mb-3">
+                    <label class="form-label">Student Roll Number</label>
+                    <input name="roll_number" type="text" class="form-control" required />
+                  </div>
+                  <div class="col-md-6 mb-3">
+                    <label class="form-label">Book ID</label>
+                    <input name="book_id" type="text" class="form-control" required />
+                  </div>
+                </div>
+                <button type="submit" name="submit" value="return_book" class="btn btn-success">
+                  <i class="fas fa-check-circle me-2"></i>Return Book
+                </button>
+              </form>
+            </div>
+
+            <!-- Search Book Form -->
+            <div id="search-form" class="form-section" style="display: none">
+              <h5><i class="fas fa-search me-2"></i>Search Book</h5>
+              <form id="show-books-form" method="POST" class="row g-3 align-items-end">
+                <div class="col-md-4">
+                  <label for="search-type" class="form-label">Search By</label>
+                  <select id="search-type" name="search_by" class="form-select">
+                    <option value="id">Book ID</option>
+                    <option value="name">Book Name</option>
+                    <option value="subject">Book Subject</option>
+                    <option value="writer">Book Writer</option>
+                  </select>
+                </div>
+                <div class="col-md-6">
+                  <label for="search-value" class="form-label">Search</label>
+                  <input name="search" type="text" class="form-control" id="search-value" placeholder="Enter your search value" />
+                </div>
+                <div class="col-md-2">
+                  <button type="submit" name="submit" value="search_book" class="btn btn-success w-100">
+                    <i class="fas fa-search me-2"></i>Search
+                  </button>
+                </div>
+              </form>
+              
+              <div class="table-container">
+                <table class="table custom-table" id="show-books-table">
+                  <thead>
+                    <tr>
+                      <th>Book Name</th>
+                      <th>Book ID</th>
+                      <th>Book Writer</th>
+                      <th>Book Subject</th>
+                      <th>Total Available</th>
+                      <th>Total Issued</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {% for i in user['searched_books'] %}
+                    <tr>
+                      <td>{{i['name']}}</td>
+                      <td>{{i['id']}}</td>
+                      <td>{{i['writter']}}</td>
+                      <td>{{i['subject']}}</td>
+                      <td>{{i['available']}}</td>
+                      <td>{{i['totalborrowed']}}</td>
+                    </tr>
+                    {% endfor %}
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Graph Section -->
+        <div class="row mt-4">
+          <div class="col-12">
+            <div class="graph-container">
+              <h3><i class="fas fa-chart-bar me-2"></i>Visualise Most Issued Books Subject-wise</h3>
+              <form method="POST" class="row g-3 align-items-end mb-4">
+                <div class="col-md-6 col-lg-4">
+                  <label class="form-label">Select Subject</label>
+                  <select name="subject" class="form-select" required>
+                    <option value="" disabled selected>Select a Subject</option>
+                    <option value="COMPUTER SCIENCE">COMPUTER SCIENCE</option>
+                    <option value="MATHEMETICS">MATHEMATICS</option>
+                    <option value="FINANCE">FINANCE</option>
+                    <option value="HISTORY">HISTORY</option>
+                    <option value="ECONOMICS">ECONOMICS</option>
+                  </select>
+                </div>
+                <div class="col-auto">
+                  <button type="submit" name="submit" value="generate_graph" class="btn btn-primary">
+                    <i class="fas fa-chart-line me-2"></i>Show Graph
+                  </button>
+                </div>
+              </form>
+              {% if user.image %}
+              <div class="text-center">
+                <img src="data:image/png;base64,{{ user.image }}" alt="Top 10 Books Chart" class="graph-image"/>
+              </div>
+              {% endif %}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <footer class="footer">
+      <div class="container text-center">
+        <p>&copy; 2025 Ranganathan Pustakalaya. All Rights Reserved.</p>
+        <p>
+          Follow us on 
+          <a href="#"><i class="fab fa-facebook me-1"></i>Facebook</a>,
+          <a href="#"><i class="fab fa-twitter me-1"></i>Twitter</a>,
+          <a href="#"><i class="fab fa-instagram me-1"></i>Instagram</a>
+        </p>
+      </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+      const searchedBooks = {{ user['searched_books'] | tojson | safe }};
+      
+      if (searchedBooks.length > 0) {
+        document.querySelector('.search').classList.add('active');
+        document.getElementById('search-form').style.display = "block";
+      } else {
+        document.querySelector('.add').classList.add('active');
+        document.getElementById('add-form').style.display = "block";
+      }
+      
+      function showForm(formId) {
+        const buttons = document.querySelectorAll('.btn-group-custom .btn');
+        buttons.forEach(btn => {
+          btn.classList.remove('active');
+        });
+        
+        document.querySelector('.' + formId).classList.add('active');
+        
+        const forms = ["add-form", "issue-form", "return-form", "search-form"];
+        forms.forEach(id => {
+          document.getElementById(id).style.display = id === formId + "-form" ? "block" : "none";
+        });
+      }
+      
+      // Auto-hide flash messages after 5 seconds
+      setTimeout(function() {
+        const alerts = document.querySelectorAll('.alert');
+        alerts.forEach(alert => {
+          const bsAlert = new bootstrap.Alert(alert);
+          bsAlert.close();
+        });
+      }, 5000);
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
